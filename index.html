@@ -41,28 +41,22 @@
 
     <!-- Création d'un formulaire pour gérer l'ajout de messages -->
 
-      <div id="divContainingNewMessageForm">
+			<div id="formAddNewContact">
 
-            <header id="headerAddNewMessage">
-              <i id="closeAddNewMessageForm" class="far fa-times-circle"></i>
-            </header>
+				<header id="headerAddNewMessage"><a id="closeForm"><i class="far fa-times-circle"></i></a></header>
 
-            <div id="formAddContactTextContent">
-                  <div id="formContentOnLeft">
-                    <input type="text" id="firstname" name="firstname" placeholder="Prénom" required/>
-                    <input type="text" id="name" name="name" placeholder="Nom" required/>
-                  </div>
+				<form action="/new-contact">
 
-                  <div id="formContentOnRight">
-                    <textarea name="newMessage" id="newMessage" cols="30" rows="10" required placeholder="Hey ! You got a new message Bro ;)"></textarea>
-                  </div>
-            </div>
+					<input type="text" name="firstname" id="firstname" value="Michel" placeholder="Prénom">
+					<input type="text" name="familyName" id="familyName" value="Dupont" placeholder="Nom">
+					<textarea name="messageCorps" id="messageCorps" cols="30" rows="10" placeholder="Tapez votre message ici..."></textarea>
+					<input type="reset" value="Réinitialiser" id="resetButton">
+					<button id="sendButton">Ajouter</button>
 
-            <div id="formAddMessageButtons">
-              <a href="#" id="sendNewMessageButton">Ajouter !</a>
-            </div>
+				</form>
 
-      </div>
+			</div>
+
 
 
 

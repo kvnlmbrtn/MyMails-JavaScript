@@ -1,3 +1,11 @@
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+
+    // Définition d'un compteur
+
+    var counter = document.getElementsByClassName('contentBlocks').length;
+    document.getElementById('numberOfMessages').textContent = counter;
+
 
 //------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------
@@ -6,15 +14,11 @@
 
     for(var i=0; i<document.getElementsByClassName("linkTrash").length; i++) {
 
-      var counter = document.getElementsByClassName('contentBlocks').length;
-      document.getElementById('numberOfMessages').textContent = counter;
-
       document.getElementsByClassName("linkTrash")[i].addEventListener("click",
     function() {
+      this.parentNode.parentNode.remove();
       counter = counter - 1;
       document.getElementById('numberOfMessages').textContent = counter;
-      this.parentNode.parentNode.remove();
-      console.log(counter);
     })
   }
 
@@ -29,36 +33,67 @@
 
    var addNewMessageLink = document.getElementById("addNewMessageLink");
 
-   var divContainingNewMessageForm = document.getElementById("divContainingNewMessageForm");
+   var formAddNewContact = document.getElementById("formAddNewContact");
 
    addNewMessageLink.onclick = function() {
-       divContainingNewMessageForm.style.display = "block";
+       formAddNewContact.style.display = "block";
    }
-
 
    // Fermeture de la div lorsque l'on appuie sur le logo de fermeture
 
-   var closeAddNewMessageForm = document.getElementById("closeAddNewMessageForm");
+   var closeForm = document.getElementById("closeForm");
+   var resetButton = document.getElementById("resetButton");
+   var sendButton = document.getElementById("sendButton");
+   var pageWrapper = document.getElementById("pageWrapper");
+   var firstname = document.getElementById("firstname");
+   var familyName = document.getElementById("familyName");
+   var messageCorps = document.getElementById("messageCorps");
 
-   closeAddNewMessageForm.onclick = function() {
-       divContainingNewMessageForm.style.display = "none";
+
+   // Fermeture du formulaire au clic sur la croix
+   closeForm.onclick = function() {
+       formAddNewContact.style.display = "none";
    }
 
+   // Ensemble des commandes activées à l'envoi du formulaire
+   sendButton.addEventListener("click", function(e) {
 
-//------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------
+     // On empêche le navigateur de renvoyer vers le serveur
+     e.preventDefault();
 
-	   // Ajout d'un profil dès que l'on clique sur "Ajouter"
+     // On ferme le formulaire
+     formAddNewContact.style.display = "none";
 
-     var sendNewMessageButton = document.getElementById("sendNewMessageButton");
+     // On crée un nouveau profil et on ajoute 1 au compteur
+     var newProfile = document.createElement("article");
+     newProfile.classList.add("profileBlocks");
+     document.getElementById("pageWrapper").insertBefore(newProfile, pageWrapper.firstChild);
+     counter = counter + 1;
+     document.getElementById('numberOfMessages').textContent = counter;
 
-     var pageWrapper = document.getElementById("pageWrapper");
+     // On récupère les informations du formulaire pour les insérer dans le nouveau message
+     var newFirstname = firstname.value;
+     var newFamilyName = familyName.value;
+     var espace = ' ';
+     var identity = newFirstname + " " + newFamilyName;
 
-     sendNewMessageButton.onclick = function() {
-         var newProfile = document.createElement("article");
-         newProfile.classList.add("profileBlocks");
-         document.getElementById("pageWrapper").insertBefore(newProfile, pageWrapper.firstChild);
-     }
+     var newRecipient = document.createElement("h2");
+     newRecipient.textContent = identity;
+     console.log(newRecipient);
+     newProfile.appendChild(newRecipient);
+
+     var newMessage = document.createElement("p");
+     newMessage.textContent = messageCorps.value;
+     console.log(newMessage);
+     newProfile.appendChild(newMessage);
+
+
+
+
+   })
+
+
+
 
 
 
