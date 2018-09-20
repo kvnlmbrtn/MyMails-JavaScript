@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>MyMails</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<link rel="shortcut icon" href="logo-la-capsule.png">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	</head>
+
+	<body>
+
+    <!-- Création d'une bannière pour le menu des actions -->
+
+    <header id="bannerNavigation">
+
+      <div id="addNewMessage">
+        <div id="contentAddNewMessage">
+          <a href="#" id="addNewMessageLink"><i id="logoAdd" class="fas fa-plus"></i></a>
+        </div>
+        <div>
+          <p id="textAdd">Ajouter</p>
+        </div>
+      </div>
+
+      <div id="counterOfMessages">
+        <h2>Message(s) :</h2>
+        <div id="numberOfMessages"></div>
+      </div>
+
+      <div id="searchMessage">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Rechercher..." />
+      </div>
+
+    </header>
+
+
+
+    <!-- Création d'un formulaire pour gérer l'ajout de messages -->
+
+      <div id="divContainingNewMessageForm">
+
+            <header id="headerAddNewMessage">
+              <i id="closeAddNewMessageForm" class="far fa-times-circle"></i>
+            </header>
+
+            <div id="formAddContactTextContent">
+                  <div id="formContentOnLeft">
+                    <input type="text" id="firstname" name="firstname" placeholder="Prénom" required/>
+                    <input type="text" id="name" name="name" placeholder="Nom" required/>
+                  </div>
+
+                  <div id="formContentOnRight">
+                    <textarea name="newMessage" id="newMessage" cols="30" rows="10" required placeholder="Hey ! You got a new message Bro ;)"></textarea>
+                  </div>
+            </div>
+
+            <div id="formAddMessageButtons">
+              <a href="#" id="sendNewMessageButton">Ajouter !</a>
+            </div>
+
+      </div>
+
+
+
+
+    <!-- Création d'une wrapper pour contenir les différents profils -->
+
+    <div id="pageWrapper">
+
+      <article class="profileBlocks" id="profileBlock1">
+
+        <div class="pictureBlocks" id="pictureBlock1">
+						<span class="profilePictures" id="profilePicture1"></span>
+        </div>
+
+        <div class="contentBlocks" id="contentBlock1">
+          <h2>Noel Paganelli</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore nesciunt, accusamus aut quod sint quae facere ratione libero dolorem excepturi quas ea incidunt pariatur vel iusto odit voluptates, ex.</p>
+        </div>
+
+        <div class="logoBlocks">
+          <a href="#" class="linkTrash"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </article>
+
+      <article class="profileBlocks" id="profileBlock2">
+
+        <div class="pictureBlocks" id="pictureBlock2">
+						<span class="profilePictures" id="profilePicture2"></span>
+        </div>
+
+        <div class="contentBlocks" id="contentBlock2">
+          <h2>Elise Watson</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore nesciunt, accusamus aut quod sint quae facere ratione libero dolorem excepturi quas ea incidunt pariatur vel iusto odit voluptates, ex.</p>
+        </div>
+
+        <div class="logoBlocks">
+          <a href="#rappel" class="linkTrash"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </article>
+
+      <article class="profileBlocks" id="profileBlock3">
+
+        <div class="pictureBlocks" id="pictureBlock3">
+						<span class="profilePictures" id="profilePicture3"></span>
+        </div>
+
+        <div class="contentBlocks" id="contentBlock3">
+          <h2>Adam Keval</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore nesciunt, accusamus aut quod sint quae facere ratione libero dolorem excepturi quas ea incidunt pariatur vel iusto odit voluptates, ex.</p>
+        </div>
+
+        <div class="logoBlocks">
+          <a href="#rappel" class="linkTrash"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </article>
+
+      <article class="profileBlocks" id="profileBlock4">
+
+        <div class="pictureBlocks" id="pictureBlock4">
+						<span class="profilePictures" id="profilePicture4"></span>
+        </div>
+
+        <div class="contentBlocks" id="contentBlock4">
+          <h2>Alexandra Pozi</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore nesciunt, accusamus aut quod sint quae facere ratione libero dolorem excepturi quas ea incidunt pariatur vel iusto odit voluptates, ex.</p>
+        </div>
+
+        <div class="logoBlocks">
+          <a href="#rappel" class="linkTrash"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </article>
+
+      <article class="profileBlocks" id="profileBlock5">
+
+        <div class="pictureBlocks" id="pictureBlock5">
+						<span class="profilePictures" id="profilePicture5"></span>
+        </div>
+
+        <div class="contentBlocks" id="contentBlock5">
+          <h2>Zoe Milot</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore nesciunt, accusamus aut quod sint quae facere ratione libero dolorem excepturi quas ea incidunt pariatur vel iusto odit voluptates, ex.</p>
+        </div>
+
+        <div class="logoBlocks">
+          <a href="#rappel" class="linkTrash"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <script src="main.js"></script>
+		<!--script src="scroll-reveal-parent-doc.js"></script-->
+		<!--script src="scroll-reveal-la-capsule.js"></script-->
+
+
+	</body>
+</html>

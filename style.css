@@ -1,0 +1,601 @@
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme de l'arrière plan du site en grisé */
+
+body {
+  font-family: 'Montserrat';
+  margin: 3em auto 3em auto;
+  background-color: #f4f8ff;
+}
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme du header */
+
+#bannerNavigation {
+  display: block;
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+
+  position: relative;
+  width: 75%;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px #dedede solid;
+}
+
+
+/* Mise en forme du bouton d'ajout d'un message */
+
+  #addNewMessage {
+    display: block;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+
+    position: relative;
+    width: 20%;
+    min-width: 130px;
+    height: 40px;
+    margin: auto 2em auto 2em;
+    border-radius: 30px;
+    background: white;
+    border: 1px #dedede solid;
+  }
+
+
+    #addNewMessage .fas {
+      margin: auto 1em auto 0;
+    }
+
+    #addNewMessage:hover {
+      box-shadow: 2px 2px 2px  #dedede;
+    }
+
+
+      #textAdd,
+      #logoAdd {
+        font-size: 1em;
+        color: #9c47fc;
+        display: block;
+        font-weight: bold;
+
+        background: -webkit-linear-gradient(45deg, #009FFF, #ec2F4B);
+        background: -moz-linear-gradient(#009FFF, #ec2F4B);
+        background: -ms-linear-gradient(#009FFF, #ec2F4B);
+        background: -o-linear-gradient(#009FFF, #ec2F4B);
+        background: linear-gradient(#009FFF, #ec2F4B);
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -ms-background-clip: text;
+        -o-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+      #logoAdd {
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        -moz-transition: all 0.2s ease-in-out 0s;
+        -ms-transition: all 0.2s ease-in-out 0s;
+        -o-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+
+        /*transition: font-size 0.05s ease;
+        transform : rotate(90deg);*/
+      }
+
+      #logoAdd:hover {
+        -webkit-transform: rotate(90deg) scale(1.10);
+        -moz-transform: rotate(90deg) scale(1.10);
+        -ms-transform: rotate(90deg) scale(1.10);
+        -o-transform: rotate(90deg) scale(1.10);
+        transform: rotate(90deg) scale(1.10);
+
+        /*font-size: 1.2em;*/
+      }
+
+
+      #searchMessage {
+        display: none; /* Attention à faire ré-apparaître cette div */
+      }
+
+
+/* Mise en forme du compteur de messages */
+
+    #counterOfMessages {
+      display: block;
+
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      -o-flex-direction: row;
+      flex-direction: row;
+
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+
+      position: relative;
+      width: 20%;
+      height: 40px;
+      min-width: 130px;
+      margin: auto 2em auto 2em;
+      border-radius: 30px;
+      background: white;
+      border: 1px #dedede solid;
+    }
+
+      #counterOfMessages h2,
+      #numberOfMessages {
+        font-size: 1em;
+        color: #9c47fc;
+        display: block;
+        font-weight: bold;
+        margin-right: 0.3em;
+        margin-left: 0.3em;
+
+        background: -webkit-linear-gradient(45deg, #009FFF, #ec2F4B);
+        background: -moz-linear-gradient(#009FFF, #ec2F4B);
+        background: -ms-linear-gradient(#009FFF, #ec2F4B);
+        background: -o-linear-gradient(#009FFF, #ec2F4B);
+        background: linear-gradient(#009FFF, #ec2F4B);
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -ms-background-clip: text;
+        -o-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+
+      #counterOfMessages:hover {
+        box-shadow: 2px 2px 2px  #dedede;
+      }
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Gestion de la boite de dialogue pour ajouter un nouveau message */
+
+    #divContainingNewMessageForm {
+      display: none;
+      position: relative;
+      width: 75%;
+      height: 300px;
+      min-width: 130px;
+      margin: 2em auto 2em auto;
+      border-radius: 30px;
+      background: white;
+      border: 1px #dedede solid;
+    }
+
+    #headerAddNewMessage {
+      text-align: right;
+      margin-right: 1.5em;
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #eaa267;
+      font-weight: 300;
+    }
+
+      #headerAddNewMessage i:hover {
+        cursor: pointer;
+        color: #ea7167;
+        font-weight: 700;
+      }
+
+
+    #formAddContactTextContent {
+      display: block;
+      position: relative;
+      width: 95%;
+      margin: 0.5em auto 0.5em auto;
+
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      -o-flex-direction: row;
+      flex-direction: row;
+
+      -webkit-justify-content: space-around;
+      -moz-justify-content: space-around;
+      -ms-justify-content: space-around;
+      -o-justify-content: space-around;
+      justify-content: space-around;
+    }
+
+    #formContentOnLeft {
+        display: block;
+        position: relative;
+        width: 40%;
+
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+
+        -webkit-justify-content: space-around;
+        -moz-justify-content: space-around;
+        -ms-justify-content: space-around;
+        -o-justify-content: space-around;
+        justify-content: space-around;
+      }
+
+            #formContentOnLeft input,
+            #formContentOnLeft a {
+              display: block;
+              position: relative;
+              width: 100%;
+              font-family: 'Montserrat', sans-serif;
+
+          		-webkit-appearance: none;
+          		-moz-appearance: none;
+          		-ms-appearance: none;
+          		-o-appearance: none;
+          		appearance: none;
+            }
+
+            [placeholder] {
+          		opacity: 0.6;
+          	}
+
+            input[type="text"] {
+        			display: block;
+        			height: 2em;
+        			line-height: 2em;
+        			margin: 1em auto 1em auto;
+        			font-size: 0.9em;
+        			font-family: 'Montserrat', sans-serif;
+        			color: inherit;
+        			width: 50%;
+        			border: none;
+        			background: transparent;
+        			border-bottom: solid 1px #c9c9c9;
+        			outline: 0;
+        			padding: 0;
+        			text-decoration: none;
+        		}
+
+        			input[type="text"]:focus {
+        				border-bottom: 2px #008B8B solid;
+        			}
+
+        		textarea {
+        			display: block;
+        			height: 50%;
+        			line-height: 1em;
+        			margin: 3em auto 1em auto;
+        			font-size: 0.9em;
+        			font-family: 'Montserrat', sans-serif;
+        			color: inherit;
+        			width: 100%;
+        			border: none;
+        			background: transparent;
+        			border-bottom: solid 1px #c9c9c9;
+        			outline: 0;
+        			padding: 0;
+        			text-decoration: none;
+        		}
+
+        			textarea:focus {
+        				border-bottom: 2px #008B8B solid;
+        			}
+
+
+        #sendNewMessageButton {
+          text-decoration: none;
+          background: white;
+          color: #8e8e8e;
+          border: 1px #8e8e8e solid;
+          width: 15%;
+          min-width: 150px;
+          text-align: center;
+          border-radius: 30px;
+          height: 2em;
+          line-height: 2em;
+          font-weight: 300;
+          padding: 0.5em 1em 0.5em 1em;
+
+          transition: all 0.1s ease;
+        }
+
+        #sendNewMessageButton:hover {
+          font-weight: 600;
+          box-shadow: 2px 2px 2px #dedede;
+          background: linear-gradient(90deg, #009FFF, #ec2F4B);
+          color: white;
+          border: none;
+        }
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Insertion d'un page wrapper pour contenir nos profils */
+
+#pageWrapper {
+  display: block;
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+
+  position: relative;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+}
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Insertion d'une transition au clic sur les logos poubelle */
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+  a:hover {
+    text-decoration: none;
+    color: #8e8e8e;
+  }
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme des blocs profils */
+
+
+.profileBlocks {
+  display: block;
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+
+  padding: 2em 2em 2em 2em;
+  border: 1px #dedede solid;
+  border-radius: 30px;
+  background: white;
+  margin-top: 0.5em;
+}
+
+  #profileBlock1 {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  #profileBlock5 {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+
+
+
+.profilePictures {
+  display: block;
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  border: 1px solid #dedede;
+
+  margin: auto 2em auto 2em;
+}
+
+.profilePictures {
+  display: block;
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+}
+
+  #profilePicture1 {
+    background-image: url("avatar-1.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture2 {
+    background-image: url("avatar-2.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture3 {
+    background-image: url("avatar-3.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture4 {
+    background-image: url("avatar-4.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture5 {
+    background-image: url("avatar-5.jpg");
+    background-size: cover;
+  }
+
+
+.contentBlocks {
+  display: block;
+  position: relative;
+  margin: auto 2em auto 1em;
+  text-align: left;
+}
+
+    .contentBlocks h2 {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .contentBlocks p {
+      font-size: 1em;
+      color: #8e8e8e;
+    }
+
+.logoBlocks {
+  display: block;
+  position: relative;
+  width: 5%;
+  margin: auto 1em auto 1em;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
