@@ -517,12 +517,12 @@ a {
   text-align: left;
 }
 
-    .contentBlocks h2 {
+    .contentBlocks .recipient {
       font-size: 1.1em;
       font-weight: bold;
     }
 
-    .contentBlocks p {
+    .contentBlocks .messageContent {
       font-size: 1em;
       color: #8e8e8e;
     }

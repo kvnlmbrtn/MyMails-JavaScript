@@ -64,31 +64,64 @@
      // On ferme le formulaire
      formAddNewContact.style.display = "none";
 
-     // On crée un nouveau profil et on ajoute 1 au compteur
-     var newProfile = document.createElement("article");
-     newProfile.classList.add("profileBlocks");
-     document.getElementById("pageWrapper").insertBefore(newProfile, pageWrapper.firstChild);
-     counter = counter + 1;
-     document.getElementById('numberOfMessages').textContent = counter;
 
      // On récupère les informations du formulaire pour les insérer dans le nouveau message
+
      var newFirstname = firstname.value;
      var newFamilyName = familyName.value;
      var espace = ' ';
      var identity = newFirstname + " " + newFamilyName;
 
-     var newRecipient = document.createElement("h2");
-     newRecipient.textContent = identity;
-     console.log(newRecipient);
-     newProfile.appendChild(newRecipient);
 
-     var newMessage = document.createElement("p");
-     newMessage.textContent = messageCorps.value;
-     console.log(newMessage);
-     newProfile.appendChild(newMessage);
+     // On crée un nouveau profil et on ajoute 1 au compteur
+     var newProfile = document.createElement("article");
+     newProfile.classList.add("profileBlocks");
+
+           var newPictureBlock = document.createElement("div");
+           newProfile.classList.add("pictureBlocks");
+
+                 var newAvatar = document.createElement('img');
+                 newAvatar.src = "avatar-2.jpg";
+                 newAvatar.classList.add("profilePictures");
+                 newProfile.appendChild(newAvatar);
+
+           newProfile.appendChild(newPictureBlock);
+
+           var newContentBlock = document.createElement("div");
+           newContentBlock.classList.add("contentBlocks");
+
+                 var newRecipient = document.createElement("h2");
+                 newRecipient.textContent = identity;
+                 newRecipient.classList.add("recipient");
+                 newContentBlock.appendChild(newRecipient);
+
+                 var newMessage = document.createElement("p");
+                 newMessage.textContent = messageCorps.value;
+                 newMessage.classList.add("messageContent");
+                 newContentBlock.appendChild(newMessage);
+
+           newProfile.appendChild(newContentBlock);
+
+           var newLogoBlock = document.createElement("div");
+           newLogoBlock.classList.add("logoBlocks");
+
+                var newLink = document.createElement("a");
+                newLink.classList.add("linkTrash");
+
+                      var newTrashIcon = document.createElement("i");
+                      newTrashIcon.classList.add("fas");
+                      newLink.appendChild(newTrashIcon);
+
+                newLogoBlock.appendChild(newLink);
+
+           newProfile.appendChild(newLogoBlock);
 
 
 
+
+     document.getElementById("pageWrapper").insertBefore(newProfile, pageWrapper.firstChild);
+     counter = counter + 1;
+     document.getElementById('numberOfMessages').textContent = counter;
 
    })
 
