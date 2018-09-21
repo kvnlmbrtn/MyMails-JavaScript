@@ -403,6 +403,31 @@ a {
     background-size: cover;
   }
 
+  #profilePicture6 {
+    background-image: url("avatar-1.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture7 {
+    background-image: url("avatar-2.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture8 {
+    background-image: url("avatar-3.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture9 {
+    background-image: url("avatar-4.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture10 {
+    background-image: url("avatar-5.jpg");
+    background-size: cover;
+  }
+
 
 .contentBlocks {
   display: block;
