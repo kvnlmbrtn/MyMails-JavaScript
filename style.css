@@ -6,7 +6,7 @@
 body {
   font-family: 'Montserrat';
   margin: 3em auto 3em auto;
-  background-color: #f4f8ff;
+  background-image: url("whitenoise.png"), linear-gradient(45deg, #efdec6, #cad8d2, #97c2c1, #9abcdd, #697fa3);
 }
 
 
@@ -17,32 +17,12 @@ body {
 
 #bannerNavigation {
   display: block;
-
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
   display: flex;
-
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
   flex-direction: row;
-
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
   justify-content: center;
-
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
   align-items: center;
 
-  position: relative;
+  /*position: relative;*/
   width: 75%;
   height: 60px;
   margin-left: auto;
@@ -54,33 +34,25 @@ body {
 }
 
 
+      .fixedPosition {
+        display: block;
+  		  position: fixed;
+  		  top: 0;
+        left: 12.5%;
+  		  z-index: 5;
+        background-image: url("whitenoise.png"), linear-gradient(90deg, #8e8e8e, #dedede);
+      }
+
+
+
+
 /* Mise en forme du bouton d'ajout d'un message */
 
   #addNewMessage {
     display: block;
-
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
-
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    -o-flex-direction: row;
     flex-direction: row;
-
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
     justify-content: center;
-
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
     align-items: center;
 
     position: relative;
@@ -141,11 +113,11 @@ body {
       }
 
       #logoAdd:hover {
-        -webkit-transform: rotate(90deg) scale(1.10);
-        -moz-transform: rotate(90deg) scale(1.10);
-        -ms-transform: rotate(90deg) scale(1.10);
-        -o-transform: rotate(90deg) scale(1.10);
-        transform: rotate(90deg) scale(1.10);
+        -webkit-transform: rotate(90deg) scale(1.3);
+        -moz-transform: rotate(90deg) scale(1.30);
+        -ms-transform: rotate(90deg) scale(1.30);
+        -o-transform: rotate(90deg) scale(1.30);
+        transform: rotate(90deg) scale(1.30);
 
         /*font-size: 1.2em;*/
       }
@@ -160,29 +132,9 @@ body {
 
     #counterOfMessages {
       display: block;
-
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
-
-      -webkit-flex-direction: row;
-      -moz-flex-direction: row;
-      -ms-flex-direction: row;
-      -o-flex-direction: row;
       flex-direction: row;
-
-      -webkit-justify-content: center;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      -o-justify-content: center;
       justify-content: center;
-
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
       align-items: center;
 
       position: relative;
@@ -204,10 +156,6 @@ body {
         margin-right: 0.3em;
         margin-left: 0.3em;
 
-        background: -webkit-linear-gradient(45deg, #009FFF, #ec2F4B);
-        background: -moz-linear-gradient(#009FFF, #ec2F4B);
-        background: -ms-linear-gradient(#009FFF, #ec2F4B);
-        background: -o-linear-gradient(#009FFF, #ec2F4B);
         background: linear-gradient(#009FFF, #ec2F4B);
 
         -webkit-background-clip: text;
@@ -347,23 +295,8 @@ body {
 
 #pageWrapper {
   display: block;
-
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
   display: flex;
-
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
   flex-direction: column;
-
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
   justify-content: center;
 
   position: relative;
@@ -401,88 +334,49 @@ a {
 
 .profileBlocks {
   display: block;
-
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
   display: flex;
-
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
+  flex-wrap: wrap;
   flex-direction: row;
-
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
+  justify-content: space-around;
   align-items: center;
 
-  padding: 2em 2em 2em 2em;
+  padding: 1em 1em 1em 1em;
   border: 1px #dedede solid;
   border-radius: 30px;
   background: white;
   margin-top: 0.5em;
 }
 
-  #profileBlock1 {
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-  }
-
-  #profileBlock5 {
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
-
-
-
-
-.profilePictures {
+.trashLogo {
   display: block;
-
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-
-  width: 100px;
-  height: 100px;
-
-  border-radius: 50%;
-  border: 1px solid #dedede;
-
-  margin: auto 2em auto 2em;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
 }
 
+  .trashLogo:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+
 .profilePictures {
   display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+
+  position: relative;
+
   width: 80px;
   height: 80px;
 
   border-radius: 50%;
+  border: 1px solid #dedede;
 }
+
 
   #profilePicture1 {
     background-image: url("avatar-1.jpg");
@@ -513,8 +407,9 @@ a {
 .contentBlocks {
   display: block;
   position: relative;
-  margin: auto 2em auto 1em;
+  margin: auto 2em auto 2em;
   text-align: left;
+  width: 450px;
 }
 
     .contentBlocks .recipient {
@@ -527,11 +422,25 @@ a {
       color: #8e8e8e;
     }
 
-.logoBlocks {
-  display: block;
-  position: relative;
-  width: 5%;
-  margin: auto 1em auto 1em;
-  font-size: 1.3rem;
-  line-height: 1.3;
-}
+
+
+    @media screen and (max-width: 860px) {
+
+      .profileBlocks {
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .contentBlocks {
+        text-align: center;
+        display: block;
+        position: relative;
+        width: 90%;
+
+      }
+
+    }

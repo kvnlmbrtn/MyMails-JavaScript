@@ -12,9 +12,9 @@
 
 		// Quand l'utilisateur clique sur l'icône poubelle, on active ... :
 
-    for(var i=0; i<document.getElementsByClassName("linkTrash").length; i++) {
+    for(var i=0; i<document.getElementsByClassName("trashLogo").length; i++) {
 
-      document.getElementsByClassName("linkTrash")[i].addEventListener("click",
+      document.getElementsByClassName("trashLogo")[i].addEventListener("click",
     function() {
       this.parentNode.parentNode.remove();
       counter = counter - 1;
@@ -64,14 +64,12 @@
      // On ferme le formulaire
      formAddNewContact.style.display = "none";
 
-
      // On récupère les informations du formulaire pour les insérer dans le nouveau message
 
      var newFirstname = firstname.value;
      var newFamilyName = familyName.value;
      var espace = ' ';
      var identity = newFirstname + " " + newFamilyName;
-
 
      // On crée un nouveau profil et on ajoute 1 au compteur
      var newProfile = document.createElement("article");
@@ -105,18 +103,22 @@
            var newLogoBlock = document.createElement("div");
            newLogoBlock.classList.add("logoBlocks");
 
-                var newLink = document.createElement("a");
-                newLink.classList.add("linkTrash");
+                var newTrashLogo = document.createElement('img');
+                newTrashLogo.src = "garbage.png";
+                newTrashLogo.classList.add("trashLogo");
 
-                      var newTrashIcon = document.createElement("i");
-                      newTrashIcon.classList.add("fas");
-                      newLink.appendChild(newTrashIcon);
+                // Attention au caractère asynchrone ici, car JS va lire toutes les trash qui existent au démarrage du navigateur. Celle qu'on vient de créer n'est donc pas reconnue et il faut donc réenvoyer la commande pour que le navigateur "apose une oreille" sur la nouvelle poubelle créé
 
-                newLogoBlock.appendChild(newLink);
+                newTrashLogo.addEventListener("click",
+                  function() {
+                    this.parentNode.parentNode.remove();
+                    counter = counter - 1;
+                    document.getElementById('numberOfMessages').textContent = counter;
+                  })
+
+                newLogoBlock.appendChild(newTrashLogo);
 
            newProfile.appendChild(newLogoBlock);
-
-
 
 
      document.getElementById("pageWrapper").insertBefore(newProfile, pageWrapper.firstChild);
@@ -129,7 +131,38 @@
 
 
 
-
- //------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
 
  	   // Mise en mémoire des éléments supprimés par l'utilisateur
+
+
+
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+
+
+     // Partie où l'on rend la barre de navigation dynamique
+
+     		// Lorsque l'utilisateur fait défiler le site, on active la fonction fonctionNavigationFigée
+
+        window.onscroll = function() {fonctionNavigationFigée()};
+
+    		// On récupère la barre de navigation dans le DOM
+
+    		var bannerNavigation = document.getElementById("bannerNavigation");
+
+    		// On variabilise la position de la barre de navigation
+
+    		var fixedPosition = bannerNavigation.offsetTop;
+
+    		// On ajoute la class "positionFigée à la barre de navigation quand la position est atteinte en scrollant
+    		// On la retire lorsque l'on quitte cette position de scroll
+
+    		function fonctionNavigationFigée() {
+    		  if (window.pageYOffset > fixedPosition) {
+    		    bannerNavigation.classList.add("fixedPosition");
+    		  } else {
+    		    bannerNavigation.classList.remove("fixedPosition");
+    		  }
+    		}
